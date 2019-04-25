@@ -1,0 +1,44 @@
+/* font-family: 'Expletus Sans', cursive;
+font-family: 'Baumans', cursive;
+font-family: 'Gugi', cursive;
+font-family: 'Eater', cursive;
+font-family: 'Revalia', cursive;
+font-family: 'Federant', cursive; */
+
+body {
+    background: url("../images/binding_dark.png");
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Expletus Sans', sans-serif;
+}
+
+/* footer {
+    background: linear-gradient(red, #343a40, #343a40)
+} */
+
+.navbar {
+    background: linear-gradient(to right, red, #343a40)
+}
+.card-header {
+    background: linear-gradient(to bottom right, #343a40, #343a40, #888888)
+}
+
+.p-item .btn {
+    display: none;
+}
+
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+@media (min-width: 768px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 3;
+    }
+}

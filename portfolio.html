@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>:About Me:</title>
+    <title>:Portfolio:</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top pb-0 pt-0 border-bottom border-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top pb-0 pt-0 border-bottom border-secondary">
         <div class="container">
-            <span class="navbar-brand text-dark pl-3 pr-3">
+            <span class="navbar-brand bg-none text-dark pl-3 pr-3">
                 <h1>Joshua Richardson</h1>
             </span>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -25,40 +25,21 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">About Me <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="portfolio.html">Portfolio</a>
-                    <a class="nav-item nav-link" href="contact.html ">Contact</a>
+                    <a class="nav-item nav-link" href="index.html">About Me</a>
+                    <a class="nav-item nav-link active" href="#">Portfolio <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="contact.html">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-5 pt-5">
+    <div class="container mt-5 mb-5 pt-5">
         <div class="card">
-            <div class="card-header text-danger">
-                <h1>About Me</h1>
+            <div class="card-header text-danger bg-dark">
+                <h1>Portfolio</h1>
             </div>
-            <div class="container pt-3 pb-3">
-                <div class="row">
-                    <div class="col-md-2">
-                        <img id="killer" width="160" height="160" src="assets/images/killer.png" alt="Pretty, ain't I?">
-                    </div>
-                    <div class="col">
-                        <p>
-                            I’ve been taking things apart to see how they work since I was young. I’ve gotten better at
-                            putting them back together over the years.
-                        </p>
-                        <p>
-                            My interests range from the mechanical to the electrical to the computational. I’m currently
-                            working full time while attending the UW Full-Stack Bootcamp. I enjoy solving difficult and
-                            unusual problems and making things work perfectly.
-                        </p>
-                        <p>
-                            I have experience with HTML, CSS, JavaScript, and PHP, and can wrangle Linux, Windows, and
-                            Macintosh. I also know my way around a motorcycle.
-                        </p>
-                    </div>
-                </div>
+            <div class="container pt-3">
+                <div class="card-columns" id="portfolio-div"></div>
             </div>
         </div>
     </div>
@@ -75,7 +56,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/portfolio.js"></script>
+    <script>
+        portfolio.BuildView();
+        $(function () {
+
+            $(".p-item").hover(function () {
+                $(this).find(".btn").toggle("fast");
+            })
+        })
+    </script>
 </body>
 
 </html>
