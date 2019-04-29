@@ -4,32 +4,44 @@ var portfolio = {
             name: "Hangman",
             author: "joshua-unseen",
             repoName: "hangman",
+            liveSite: true
         },
         {
             name: "Star Wars Combat",
             author: "joshua-unseen",
             repoName: "unit-4-game",
+            liveSite: true
         },
         {
             name: "Tacky Trivia",
             author: "joshua-unseen",
             repoName: "trivia-game",
+            liveSite: true
         },
         {
             name: "Gif Grabber",
             author: "joshua-unseen",
             repoName: "peanutbutter",
+            liveSite: true
         },
         {
             name: "R/P/S Smackdown",
             author: "joshua-unseen",
             repoName: "rps-multiplayer",
+            liveSite: true
         },
         {
             name: "Color Spectron-O-Meter",
-            author: "zenwattage",
+            author: "joshua-unseen",
             repoName: "project1",
+            liveSite: true
         },
+        {
+            name: "LIRI (node app)",
+            author: "joshua-unseen",
+            repoName: "liri-node-app",
+            liveSite: false
+        }
     ],
 
     BuildView() {
@@ -40,7 +52,9 @@ var portfolio = {
             var imgURL = "assets/images/" + this.works[i].repoName + ".png";
 
             var repoButton = $("<a href=\"" + repoURL + "\" target=\"_blank\" class=\"btn btn-primary\">").text("Go to Repo");
-            var liveButton = $("<a href=\"" + liveURL + "\" target=\"_blank\" class=\"btn btn-primary\">").text("Go to Site");
+            if (this.works[i].liveSite) {
+                var liveButton = $("<a href=\"" + liveURL + "\" target=\"_blank\" class=\"btn btn-primary\">").text("Go to Site");
+            }
             var buttonDiv = $("<div class=\"button-div d-flex justify-content-around mb-5\">").append(repoButton).append(liveButton);
 
             var newCard = $("<div class=\"card position-relative p-item\">");
