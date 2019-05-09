@@ -41,6 +41,12 @@ var portfolio = {
             author: "joshua-unseen",
             repoName: "liri-node-app",
             liveSite: false
+        },
+        {
+            name: "Word Guess (node app)",
+            author: "joshua-unseen",
+            repoName: "constructor-word-guess",
+            liveSite: false
         }
     ],
 
