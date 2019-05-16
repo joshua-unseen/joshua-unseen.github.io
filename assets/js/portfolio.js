@@ -47,6 +47,12 @@ var portfolio = {
             author: "joshua-unseen",
             repoName: "constructor-word-guess",
             liveSite: false
+        },
+        {
+            name: "Bamazon (node app)",
+            author: "joshua-unseen",
+            repoName: "bamazon",
+            liveSite: false
         }
     ],
 
