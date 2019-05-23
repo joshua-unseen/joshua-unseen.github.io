@@ -53,6 +53,12 @@ var portfolio = {
             author: "joshua-unseen",
             repoName: "bamazon",
             liveSite: false
+        },
+        {
+            name: "Friend Finder",
+            author: "joshua-unseen",
+            repoName: "friend-finder",
+            liveSite: "https://warm-earth-86290.herokuapp.com/"
         }
     ],
 
@@ -60,7 +66,12 @@ var portfolio = {
         for (var i = 0; i < this.works.length; i++) {
             var name = this.works[i].name;
             var repoURL = "https://github.com/" + this.works[i].author + "/" + this.works[i].repoName;
-            var liveURL = "https://" + this.works[i].author + ".github.io/" + this.works[i].repoName;
+            if (this.works[i].liveSite === true) {
+                var liveURL = "https://" + this.works[i].author + ".github.io/" + this.works[i].repoName;
+            }
+            else {
+                var liveURL = this.works[i].liveSite;
+            }
             var imgURL = "assets/images/" + this.works[i].repoName + ".png";
 
             var repoButton = $("<a href=\"" + repoURL + "\" target=\"_blank\" class=\"btn btn-primary\">").text("Go to Repo");
