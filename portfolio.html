@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <noscript><link rel="stylesheet" href="assets/css/nojs.css"></noscript>
     <title>:Portfolio:</title>
 </head>
 
@@ -34,11 +35,14 @@
     </nav>
 
     <div class="container mt-5 mb-5 pt-5">
-        <div class="card">
+        <div class="card position-relative" id="portfolio-card">
             <div class="card-header text-danger bg-dark">
                 <h1>Portfolio</h1>
             </div>
             <div class="container pt-3">
+                <noscript><p>
+                    You're really going to need to turn on JavaScript.  I've been rather clever here.
+                </p></noscript>
                 <div class="card-columns" id="portfolio-div"></div>
             </div>
         </div>
@@ -58,13 +62,13 @@
         crossorigin="anonymous"></script>
     <script src="assets/js/portfolio.js"></script>
     <script>
-        portfolio.BuildView();
         $(function () {
-
+            portfolio.BuildView();
             $(".p-item").hover(function () {
                 $(this).find(".btn").toggle("fast");
-            })
-        })
+            });
+            $("#portfolio-card").animate({"left": "0px"});
+        });
     </script>
 </body>
 

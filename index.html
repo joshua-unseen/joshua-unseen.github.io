@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <noscript><link rel="stylesheet" href="assets/css/nojs.css"></noscript>
     <title>:About Me:</title>
 </head>
 
@@ -34,7 +35,7 @@
     </nav>
 
     <div class="container mt-5 pt-5">
-        <div class="card">
+        <div class="card position-relative" id="bio-card">
             <div class="card-header text-danger">
                 <h1>About Me</h1>
             </div>
@@ -54,8 +55,10 @@
                             unusual problems and making things work perfectly.
                         </p>
                         <p>
-                            I have experience with HTML, CSS, JavaScript, and PHP, and can wrangle Linux, Windows, and
-                            Macintosh. I also know my way around a motorcycle.
+                            I have experience with HTML, CSS, JavaScript, and PHP.  I can put jQuery and Bootstrap to good use on the front end,
+                            and know my way around Node, Express, Handlebars, Sequelize, and MySQL on the back. I can also wrangle Linux, Windows, and
+                            Macintosh. <br>
+                            I know my way around motorcycles, too.
                         </p>
                     </div>
                 </div>
@@ -76,6 +79,12 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="assets/js/index.js"></script>
+    <script>
+        $(function() {
+            // $("#bio-card").css("right", "120%")
+            $("#bio-card").animate({"right": "0px"});
+        });
+    </script>
 </body>
 
 </html>

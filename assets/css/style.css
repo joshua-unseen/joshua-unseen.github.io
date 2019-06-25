@@ -7,6 +7,7 @@ font-family: 'Federant', cursive; */
 
 body {
     background: url("../images/binding_dark.png");
+    overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Expletus Sans', sans-serif;
@@ -25,6 +26,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .p-item .btn {
     display: none;
+}
+
+#bio-card {
+    right: 120%;
+}
+#portfolio-card {
+    left: 120%;
+}
+#contact-card {
+    bottom: 100%;
 }
 
 @media (min-width: 576px) {

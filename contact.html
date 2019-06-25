@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <noscript><link rel="stylesheet" href="assets/css/nojs.css"></noscript>
     <title>:Contact:</title>
 </head>
 
@@ -34,7 +35,7 @@
     </nav>
 
     <div class="container mt-5 mb-5 pt-5">
-        <div class="card">
+        <div class="card position-relative" id="contact-card">
             <div class="card-header text-danger">
                 <h1>Contact</h1>
             </div>
@@ -100,8 +101,10 @@
             $("#hit-me").on("click", function (event) {
                 event.preventDefault();
                 $("#sorry-modal").modal("show");
-            })
-        })
+            });
+            // $("#contact-card").css({"bottom": "100%"});
+            $("#contact-card").animate({"bottom": "0px"});
+        });
     </script>
 </body>
 
