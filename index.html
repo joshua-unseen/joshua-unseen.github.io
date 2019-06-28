@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <noscript><link rel="stylesheet" href="assets/css/nojs.css"></noscript>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/nojs.css"></noscript>
     <title>:About Me:</title>
 </head>
 
@@ -26,16 +27,17 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">About Me <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="portfolio.html">Portfolio</a>
-                    <a class="nav-item nav-link" href="contact.html ">Contact</a>
+                    <a class="nav-item nav-link active" id="bio-link" href="#bio-card">About Me <span id="sr-current"
+                            class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" id="portfolio-link" href="#portfolio-card">Portfolio</a>
+                    <!-- <a class="nav-item nav-link" href="contact.html ">Contact</a> -->
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-5 pt-5">
-        <div class="card position-relative" id="bio-card">
+    <div class="container mt-5 pt-5 position-relative">
+        <div class="card mb-4" id="bio-card">
             <div class="card-header text-danger">
                 <h1>About Me</h1>
             </div>
@@ -46,6 +48,10 @@
                     </div>
                     <div class="col">
                         <p>
+                            Connect with me on <a href="https://www.linkedin.com/in/jprchrdsn/"><img src="assets/images/LI-Logo.png" height="20" alt="LinkedIn"></a> <br>
+                            Follow me on <a href="https://github.com/joshua-unseen"><img src="assets/images/GitHub_Logo.png" height="20" alt="GitHub"></a>
+                        </p>
+                        <p>
                             I’ve been taking things apart to see how they work since I was young. I’ve gotten better at
                             putting them back together over the years.
                         </p>
@@ -55,13 +61,28 @@
                             unusual problems and making things work perfectly.
                         </p>
                         <p>
-                            I have experience with HTML, CSS, JavaScript, and PHP.  I can put jQuery and Bootstrap to good use on the front end,
-                            and know my way around Node, Express, Handlebars, Sequelize, and MySQL on the back. I can also wrangle Linux, Windows, and
+                            I have experience with HTML, CSS, JavaScript, and PHP. I can put jQuery and Bootstrap to
+                            good use on the front end,
+                            and know my way around Node, Express, Handlebars, Sequelize, and MySQL on the back. I can
+                            also wrangle Linux, Windows, and
                             Macintosh. <br>
                             I know my way around motorcycles, too.
                         </p>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="card mb-5" id="portfolio-card">
+            <div class="card-header text-danger bg-dark">
+                <h1>Portfolio</h1>
+            </div>
+            <div class="container pt-3">
+                <noscript>
+                    <p>
+                        You're really going to need to turn on JavaScript. I've been rather clever here.
+                    </p>
+                </noscript>
+                <div class="card-columns" id="portfolio-div"></div>
             </div>
         </div>
     </div>
@@ -78,12 +99,48 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/portfolio.js"></script>
     <script>
-        $(function() {
+        $(function () {
             // $("#bio-card").css("right", "120%")
-            $("#bio-card").animate({"right": "0px"});
+            $("#bio-card").animate({ "right": "0px" });
+
+            portfolio.BuildView();
+            $(".p-item").hover(function () {
+                $(this).find(".btn").toggle("fast");
+            });
+
+            $(".nav-link").on("click", event => {
+                event.preventDefault();
+                let srActive = $("#sr-current").detach();
+                if (!$(event.target).hasClass("active")) {
+                    $(".nav-link").toggleClass("active");
+                    let target = $(event.target).attr("id")
+                    console.log(target);
+                    switch (target) {
+                        case "bio-link":
+                            activateBio(srActive);
+                            break;
+                        case "portfolio-link":
+                            activatePortfolio(srActive);
+                            break;
+                    }
+                }
+            });
         });
+
+        function activateBio(srSpan) {
+            // $("body").css("overflow-y", "hidden");
+            $("#bio-link").append(srSpan);
+            $("#portfolio-card").animate({"left": "150%", "right": "-150%"});
+            $("#bio-card").animate({ "right": "0px" });
+        }
+        function activatePortfolio(srSpan) {
+            // $("body").css("overflow-y", "auto");
+            $("#portfolio-link").append(srSpan);
+            $("#portfolio-card").animate({"left": "0%", "right": "0%"});
+            $("#bio-card").animate({ "right": "150%" });
+        }
     </script>
 </body>
 

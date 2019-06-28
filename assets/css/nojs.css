@@ -1,9 +1,13 @@
 #bio-card {
-    right: 0%;
+    position: static;
 }
 #portfolio-card {
-    left: 0%;
+position: static;
 }
 #contact-card {
     bottom: 0%;
+}
+
+.nav-link {
+    display: none;
 }
