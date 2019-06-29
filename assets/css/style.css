@@ -34,10 +34,8 @@ h1, h2, h3, h4, h5, h6 {
     right: 150%;
 }
 #portfolio-card {
-    position: absolute;
-    top: 48px;
+    position: relative;
     left: 150%;
-    right: -150%;
 }
 #contact-card {
     bottom: 100%;

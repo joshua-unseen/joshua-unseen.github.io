@@ -101,9 +101,15 @@
         crossorigin="anonymous"></script>
     <script src="assets/js/portfolio.js"></script>
     <script>
+        let $bCard = $("#bio-card");
+        let $pCard = $("#portfolio-card");
+
         $(function () {
             // $("#bio-card").css("right", "120%")
-            $("#bio-card").animate({ "right": "0px" });
+            pCardPos = $pCard.position();
+            console.log(pCardPos);
+            $pCard.css("bottom", pCardPos.top - 48);
+            $bCard.animate({ "right": "0px" });
 
             portfolio.BuildView();
             $(".p-item").hover(function () {
@@ -132,14 +138,14 @@
         function activateBio(srSpan) {
             // $("body").css("overflow-y", "hidden");
             $("#bio-link").append(srSpan);
-            $("#portfolio-card").animate({"left": "150%", "right": "-150%"});
-            $("#bio-card").animate({ "right": "0px" });
+            $pCard.animate({"left": "150%"});
+            $bCard.animate({ "right": "0px" });
         }
         function activatePortfolio(srSpan) {
             // $("body").css("overflow-y", "auto");
             $("#portfolio-link").append(srSpan);
-            $("#portfolio-card").animate({"left": "0%", "right": "0%"});
-            $("#bio-card").animate({ "right": "150%" });
+            $pCard.animate({"left": "0%"});
+            $bCard.animate({ "right": "150%" });
         }
     </script>
 </body>
