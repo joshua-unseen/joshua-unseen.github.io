@@ -65,6 +65,18 @@ var portfolio = {
             author: "joshua-unseen",
             repoName: "burger",
             liveSite: "https://thawing-sands-20598.herokuapp.com/"
+        },
+        {
+            name: "Go There",
+            author: "joshua-unseen",
+            repoName: "Project-2",
+            liveSite: "https://project-2-uw.herokuapp.com/"
+        },
+        {
+            name: "The Register Scraper",
+            author: "joshua-unseen",
+            repoName: "mongoose-headlines",
+            liveSite: "https://arcane-retreat-56605.herokuapp.com/"
         }
     ],
 
