@@ -77,6 +77,12 @@ var portfolio = {
             author: "joshua-unseen",
             repoName: "mongoose-headlines",
             liveSite: "https://arcane-retreat-56605.herokuapp.com/"
+        },
+        {
+            name: "Clicky Game!",
+            author: "joshua-unseen",
+            repoName: "clicky-game",
+            liveSite: true
         }
     ],
 
