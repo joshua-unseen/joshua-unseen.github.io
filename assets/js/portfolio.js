@@ -83,6 +83,12 @@ var portfolio = {
             author: "joshua-unseen",
             repoName: "clicky-game",
             liveSite: true
+        },
+        {
+            name: "Google Books Search",
+            author: "joshua-unseen",
+            repoName: "gbsearch",
+            liveSite: "https://powerful-bayou-14913.herokuapp.com/"
         }
     ],
 
