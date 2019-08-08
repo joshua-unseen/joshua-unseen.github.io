@@ -89,6 +89,12 @@ var portfolio = {
             author: "joshua-unseen",
             repoName: "gbsearch",
             liveSite: "https://powerful-bayou-14913.herokuapp.com/"
+        },
+        {
+            name: "Hop-to-It",
+            author: "SarahMBeecroft",
+            repoName: "Project-3",
+            liveSite: "https://hoptoit.herokuapp.com/signup"
         }
     ],
 
