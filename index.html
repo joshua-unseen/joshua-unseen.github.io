@@ -11,7 +11,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
     <noscript>
-        <link rel="stylesheet" href="assets/css/nojs.css"></noscript>
+        <link rel="stylesheet" href="assets/css/nojs.css">
+    </noscript>
     <title>:About Me:</title>
 </head>
 
@@ -48,8 +49,10 @@
                     </div>
                     <div class="col">
                         <p>
-                            Connect with me on <a href="https://www.linkedin.com/in/jprchrdsn/"><img src="assets/images/LI-Logo.png" height="20" alt="LinkedIn"></a> <br>
-                            Follow me on <a href="https://github.com/joshua-unseen"><img src="assets/images/GitHub_Logo.png" height="20" alt="GitHub"></a>
+                            Connect with me on <a href="https://www.linkedin.com/in/jprchrdsn/"><img
+                                    src="assets/images/LI-Logo.png" height="20" alt="LinkedIn"></a> <br>
+                            Follow me on <a href="https://github.com/joshua-unseen"><img
+                                    src="assets/images/GitHub_Logo.png" height="20" alt="GitHub"></a>
                         </p>
                         <p>
                             I’ve been taking things apart to see how they work since I was young. I’ve gotten better at
@@ -109,7 +112,7 @@
             pCardPos = $pCard.position();
             console.log(pCardPos);
             $pCard.css("bottom", pCardPos.top - 48);
-            $bCard.animate({ "right": "0px" });
+            $bCard.animate({ "right": "0px", opacity: 1 });
 
             portfolio.BuildView();
             $(".p-item").hover(function () {
@@ -138,14 +141,14 @@
         function activateBio(srSpan) {
             // $("body").css("overflow-y", "hidden");
             $("#bio-link").append(srSpan);
-            $pCard.animate({"left": "150%"});
-            $bCard.animate({ "right": "0px" });
+            $pCard.animate({/*left: "150%",*/ opacity: 0 }, () => { $pCard.css("left", "150%") });
+            $bCard.animate({ right: "0px", opacity: 1 });
         }
         function activatePortfolio(srSpan) {
             // $("body").css("overflow-y", "auto");
             $("#portfolio-link").append(srSpan);
-            $pCard.animate({"left": "0%"});
-            $bCard.animate({ "right": "150%" });
+            $pCard.animate({ left: "0%", opacity: 1 });
+            $bCard.animate({ /*right: "150%",*/ opacity: 0 }, () => { $bCard.css("right", "150%") });
         }
     </script>
 </body>

@@ -30,10 +30,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #bio-card {
+    opacity: 0;
     position: relative;
     right: 150%;
 }
 #portfolio-card {
+    opacity: 0;
     position: relative;
     left: 150%;
 }
@@ -41,16 +43,21 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 100%;
 }
 
+@media (max-width: 576px) {
+    .navbar {
+        background: red;
+    }
+}
 @media (min-width: 576px) {
     .card-columns {
         column-count: 2;
     }
 }
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .card-columns {
         column-count: 2;
     }
-}
+} */
 @media (min-width: 992px) {
     .card-columns {
         column-count: 3;
