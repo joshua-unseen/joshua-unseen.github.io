@@ -141,13 +141,13 @@
         function activateBio(srSpan) {
             // $("body").css("overflow-y", "hidden");
             $("#bio-link").append(srSpan);
-            $pCard.animate({/*left: "150%",*/ opacity: 0 }, () => { $pCard.css("left", "150%") });
+            $pCard.animate({/*left: "150%",*/ opacity: 0 }, () => { $pCard.css("right", "150%") });
             $bCard.animate({ right: "0px", opacity: 1 });
         }
         function activatePortfolio(srSpan) {
             // $("body").css("overflow-y", "auto");
             $("#portfolio-link").append(srSpan);
-            $pCard.animate({ left: "0%", opacity: 1 });
+            $pCard.animate({ right: "0%", opacity: 1 });
             $bCard.animate({ /*right: "150%",*/ opacity: 0 }, () => { $bCard.css("right", "150%") });
         }
     </script>
