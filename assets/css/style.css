@@ -43,10 +43,20 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 100%;
 }
 
-@media (orientation: portrait) {
+@media (orientation: portrait) and (max-width: 750px) {
     .navbar {
+        padding-left: 3px;
+        padding-right: 3px;
         background: red;
     }
+    .container {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+    h1 {
+        font-size: 120%;
+    }
+
 }
 @media (min-width: 576px) {
     .card-columns {
