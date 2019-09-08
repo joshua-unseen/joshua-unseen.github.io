@@ -110,10 +110,12 @@
 
         $(function () {
             // $("#bio-card").css("right", "120%")
-            pCardPos = $pCard.position();
-            console.log(pCardPos);
-            $pCard.css("bottom", pCardPos.top - 48);
-            $bCard.animate({ "right": "0px", opacity: 1 });
+            // bCardPos = $bCard.position();
+            // pCardPos = $pCard.position();
+            // console.log(bCardPos);
+            // console.log(pCardPos);
+            // $pCard.css("bottom", pCardPos.top - 48);
+            $bCard.animate({ "right": "0px", "left": "0px", opacity: 1 });
 
             portfolio.BuildView();
             $(".p-item").hover(function () {
@@ -126,7 +128,7 @@
                 if (!$(event.target).hasClass("active")) {
                     $(".nav-link").toggleClass("active");
                     let target = $(event.target).attr("id")
-                    console.log(target);
+                    // console.log(target);
                     switch (target) {
                         case "bio-link":
                             activateBio(srActive);
@@ -142,14 +144,14 @@
         function activateBio(srSpan) {
             // $("body").css("overflow-y", "hidden");
             $("#bio-link").append(srSpan);
-            $pCard.animate({/*left: "150%",*/ opacity: 0 }, () => { $pCard.css("right", "150%") });
-            $bCard.animate({ right: "0px", opacity: 1 });
+            $pCard.animate({/*left: "150%",*/ opacity: 0 }, () => { $pCard.css({"right": "150%", "left": "-150%"}) });
+            $bCard.animate({ right: "0%", left: "0%", opacity: 1 });
         }
         function activatePortfolio(srSpan) {
             // $("body").css("overflow-y", "auto");
             $("#portfolio-link").append(srSpan);
-            $pCard.animate({ right: "0%", opacity: 1 });
-            $bCard.animate({ /*right: "150%",*/ opacity: 0 }, () => { $bCard.css("right", "150%") });
+            $pCard.animate({ right: "0%", left: "0%", opacity: 1 });
+            $bCard.animate({ /*right: "150%",*/ opacity: 0 }, () => { $bCard.css({"right": "150%", "left": "-150%"}) });
         }
     </script>
 </body>
